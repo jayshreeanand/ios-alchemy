@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require twitter/bootstrap
 //= require turbolinks
-//= require_tree .
+//= require s3_direct_upload
+//= require bootstrap
+//= require pages
+//= require custom
+
+

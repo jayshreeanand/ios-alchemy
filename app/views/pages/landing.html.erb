@@ -19,11 +19,19 @@
         <p class="lead">
           <a href="#" class="btn btn-lg btn-default">Get Started</a>
 
-<%= s3_uploader_form id: "s3_uploader",
-  callback_url: uploads_url,
+<!--
+<%= s3_uploader_form callback_url: uploads_url,
+  id: "s3_uploader",
   callback_param: "upload[psd_url]" do %>
   <%= file_field_tag :file, multiple: true %>
+  <%= submit_tag %>
 <% end %>
+-->
+
+<%= s3_uploader_form callback_url: uploads_url, callback_param: "upload[psd_url]", id: "s3-uploader" do %>
+  <%= file_field_tag :file, multiple: true %>
+<% end %>
+
 
         </p>
       </div>
@@ -35,9 +43,12 @@
     </div>
   </div>
 </div>
+<div id="uploads_container"></div>
 <script id="template-upload" type="text/x-tmpl">
-<div id="file-{%=o.unique_id%}" class="upload">
-  {%=o.name%}
-  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+<div id="upload_{%=o.unique_id%}" class="upload">
+  <h5>{%=o.name%}</h5>
+  <div class="progress progress-striped active"><div class="bar" style="width: 0%"></div></div>
 </div>
 </script>
+<br/>
+
