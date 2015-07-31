@@ -40,6 +40,11 @@ gem "less-rails"
 gem 'twitter-bootstrap-rails'
 
 
+# File Uploads
+gem 'aws-sdk'
+gem 's3_direct_upload'
+gem "paperclip"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
