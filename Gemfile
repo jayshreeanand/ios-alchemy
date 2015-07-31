@@ -34,6 +34,10 @@ group :development do
 end
 
 
+# Use Twitter Bootstrap
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
 
 
 # Use ActiveModel has_secure_password
