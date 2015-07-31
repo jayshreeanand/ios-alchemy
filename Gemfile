@@ -31,6 +31,8 @@ gem 'devise'
 
 group :development do
   gem 'byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 

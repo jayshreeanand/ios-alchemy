@@ -1,0 +1,43 @@
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">iOS Alchemy</h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="inner cover">
+        <h1 class="cover-heading">Convert Photoshop files for iOS</h1>
+        <p class="lead">Brief description about the app goes here. one more line of description</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-default">Get Started</a>
+
+<%= s3_uploader_form id: "s3_uploader",
+  callback_url: uploads_url,
+  callback_param: "upload[psd_url]" do %>
+  <%= file_field_tag :file, multiple: true %>
+<% end %>
+
+        </p>
+      </div>
+      <div class="mastfoot">
+        <div class="inner">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script id="template-upload" type="text/x-tmpl">
+<div id="file-{%=o.unique_id%}" class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
