@@ -20,5 +20,5 @@
 //= require bootstrap
 //= require pages
 //= require custom
-
+//= require tree.jquery
 

@@ -45,7 +45,7 @@ end
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
-
+gem 'jqtree-rails'
 
 # File Uploads
 gem 'aws-sdk', '< 2.0'
