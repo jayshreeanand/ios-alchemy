@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
                   :storage => :s3,
                   :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
                   
-  validates_attachment_file_name :psd, :matches => [/psd\Z/]
+  validates_attachment_file_name :onex, :matches => [/png\Z/]
 
 def s3_credentials
   { 
