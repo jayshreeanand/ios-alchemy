@@ -14,6 +14,7 @@ capybara-*.html
 /public/uploads
 /coverage/
 /spec/tmp
+/output
 rerun.txt
 pickle-email-*.html
 dump.rdb

@@ -6,7 +6,7 @@ class DesignsController < ApplicationController
 
   def create
   end
-  
+
   def index
     design = Design.first
     @design_data = [{label: "File Name", id: design.id}]
