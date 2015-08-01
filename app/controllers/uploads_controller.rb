@@ -6,10 +6,11 @@ class UploadsController < ApplicationController
   end
 
   def create
+    byebug
     @upload = current_user.uploads.new psd: URI.parse(URI.unescape(params['url']))
     respond_to do |format|
       if @upload.save
-        Resque.enqueue PsdJob, upload.id
+        Resque.enqueue PsdJob, @upload.id
         format.html { redirect_to @upload, notice: 'PSD was successfully uploaded.' }
         format.json { render :show, status: :created, location: @upload }
       else
