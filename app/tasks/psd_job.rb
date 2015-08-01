@@ -1,5 +1,5 @@
 class PsdJob
-  extend Resque::Plugins::History
+  # extend Resque::Plugins::History
   
   @queue = :worker
 
