@@ -43,7 +43,7 @@ gem 'twitter-bootstrap-rails'
 
 
 # File Uploads
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 's3_direct_upload'
 gem "paperclip"
 

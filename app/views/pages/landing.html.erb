@@ -19,15 +19,6 @@
         <p class="lead">
           <a href="#" class="btn btn-lg btn-default">Get Started</a>
 
-<!--
-<%= s3_uploader_form callback_url: uploads_url,
-  id: "s3_uploader",
-  callback_param: "upload[psd_url]" do %>
-  <%= file_field_tag :file, multiple: true %>
-  <%= submit_tag %>
-<% end %>
--->
-
 <%= s3_uploader_form callback_url: uploads_url, callback_param: "upload[psd_url]", id: "s3-uploader" do %>
   <%= file_field_tag :file, multiple: true %>
 <% end %>
