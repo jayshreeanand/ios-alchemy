@@ -2,7 +2,7 @@ module PsdUtils
   class Resize
     def self.run upload_id
       upload = Upload.find upload_id
-      # upload.psd.copy_to_local_file(:original, Rails.root.join('tmp',"#{upload_id}.psd"))
+      upload.psd.copy_to_local_file(:original, Rails.root.join('tmp',"#{upload_id}.psd"))
       psd = PSD.new(Rails.root.join('tmp', "#{upload_id}.psd"))
       psd.parse!
       psd.tree.descendant_layers.each do |layer|
