@@ -3,8 +3,17 @@ class Image < ActiveRecord::Base
   has_attached_file :onex, 
                   :storage => :s3,
                   :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+  has_attached_file :twox, 
+                :storage => :s3,
+                :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+  has_attached_file :threex, 
+                :storage => :s3,
+                :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
                   
   validates_attachment_file_name :onex, :matches => [/png\Z/]
+  validates_attachment_file_name :twox, :matches => [/png\Z/]
+  validates_attachment_file_name :threex, :matches => [/png\Z/]
+
 
 def s3_credentials
   { 
