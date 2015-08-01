@@ -31,6 +31,7 @@ gem 'foreman'
 gem 'puma'
 gem 'resque'
 gem 'resque-web', require: 'resque_web'
+gem 'mini_magick'
 
 group :development do
   gem 'byebug'
