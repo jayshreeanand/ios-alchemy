@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   require "resque_web"
 
   IosAlchemy::Application.routes.draw do
-    mount ResqueWeb::Engine => "/resque_web"
+    mount ResqueWeb::Engine => "/resque"
   end
 
   root 'pages#landing'
