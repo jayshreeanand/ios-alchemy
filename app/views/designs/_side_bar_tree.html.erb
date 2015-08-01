@@ -1,0 +1,10 @@
+
+<div id="tree1"></div>
+<script type ="text/javascript">
+
+$('#tree1').tree({
+    data: <%= raw @design_data.to_json %>,
+    autoOpen: true,
+    dragAndDrop: true
+});
+</script>

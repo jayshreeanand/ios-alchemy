@@ -1,5 +1,6 @@
 class UploadsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def new
     @upload = Upload.new
   end
