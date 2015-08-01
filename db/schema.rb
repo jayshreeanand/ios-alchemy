@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801043650) do
+ActiveRecord::Schema.define(version: 20150801092237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,26 @@ ActiveRecord::Schema.define(version: 20150801043650) do
   end
 
   add_index "designs", ["upload_id"], name: "index_designs_on_upload_id", using: :btree
+
+  create_table "images", force: true do |t|
+    t.integer  "design_id"
+    t.string   "onex_file_name"
+    t.string   "onex_content_type"
+    t.integer  "onex_file_size"
+    t.datetime "onex_updated_at"
+    t.string   "twox_file_name"
+    t.string   "twox_content_type"
+    t.integer  "twox_file_size"
+    t.datetime "twox_updated_at"
+    t.string   "threex_file_name"
+    t.string   "threex_content_type"
+    t.integer  "threex_file_size"
+    t.datetime "threex_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["design_id"], name: "index_images_on_design_id", using: :btree
 
   create_table "uploads", force: true do |t|
     t.integer  "user_id"

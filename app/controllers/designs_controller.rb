@@ -18,9 +18,6 @@ class DesignsController < ApplicationController
       children_data << data
     end
     @design_data[0][:children] = children_data
-    # @test = @design_data.to_json
-
-   
   end
 
   def show
