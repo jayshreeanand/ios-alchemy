@@ -27,7 +27,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'devise'
-
+gem 'foreman'
+gem 'puma'
+gem 'resque'
+gem 'resque-web', require: 'resque_web'
 
 group :development do
   gem 'byebug'
