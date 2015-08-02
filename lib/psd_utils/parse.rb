@@ -41,7 +41,7 @@
             end
           end
         end
-        meta_data
+        result = [{label: "File Name", id: 0, children: meta_data}]
       end
 
       def self.traverse psd

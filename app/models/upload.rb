@@ -14,7 +14,6 @@ enum status: [:incompleted, :completed]
 
 belongs_to :user
 has_many :designs, dependent: :destroy
-
 def s3_credentials
   { 
     bucket: ENV['S3_BUCKET'], 

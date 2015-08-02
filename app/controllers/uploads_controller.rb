@@ -21,7 +21,7 @@ class UploadsController < ApplicationController
         format.json { render :show, status: :created, location: @upload }
       else
         format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.json { render json: @upload.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ResqueWeb::Engine.eager_load!
   devise_for :users
   require "resque_web"
 
@@ -19,7 +20,15 @@ Rails.application.routes.draw do
   resources :designs do
     collection do
       post :create
+      post :export_images
     end
   end
+
+  resources :images do
+    collection do
+      post :list_design_images
+    end
+  end
+
 
 end

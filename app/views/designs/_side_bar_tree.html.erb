@@ -8,7 +8,7 @@
 <script type ="text/javascript">
 
 $('#tree1').tree({
-    data: <%= raw @design_data.to_json %>,
+    data: <%= raw @design.meta_data.to_json %>,
     autoOpen: true,
     dragAndDrop: true
 });
