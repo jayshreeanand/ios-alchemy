@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>IosAlchemy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <p class="navbar-text pull-right">
-  <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-  <% end %>
+  <head>
+    <title>iOS Alchemt</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+   <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">iOS Alchemy</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav pull-right">
+                  <% if user_signed_in? %>
+                    <li><%= link_to current_user.name, edit_user_registration_path, :class => 'navbar-link' %></li>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                  <% else %>
+                    <li><%= link_to "Register", new_user_registration_path, :class => 'navbar-link'  %></li>
+                    <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+                  <% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-  <%= yield %>
-</body>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row text-center">
+          <div class="container-fluid">
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+        </div>
+          <%= yield %>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+      <hr>
+       <!-- Footer -->
+      <footer>
+      </footer>
+    </div>
+  </body>
 </html>
