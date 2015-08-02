@@ -1,6 +1,6 @@
 <% @designs.each do |design| %>
     <%= link_to(controller: "images", action: "list_design_images", design_id: design.id) do %>
-    <div class="well caption">
+    <div class="well col-md-3 col-md-offset-1 caption">
         <h3 class="upload-title"><%= design.upload.psd_file_name %></h3>
     </div>
 <% end %>

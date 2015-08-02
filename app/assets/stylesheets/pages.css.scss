@@ -6,11 +6,6 @@
  */
 
 /* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
 
 /* Custom default button */
 
@@ -40,11 +35,11 @@ body {
   text-align: center;
 }
 .lead {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .upload-button {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -60,6 +55,7 @@ body {
   vertical-align: top;
 }
 .cover-container {
+  margin-top: -10px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -84,6 +80,11 @@ body {
 
 }
 
+.cover-pic {
+  margin-top: -90px;
+  z-index: -1;
+
+}
 /*
  * Affix and center
  */
@@ -111,3 +112,4 @@ body {
     width: 900px;
   }
 }
+

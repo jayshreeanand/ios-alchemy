@@ -1,5 +1,6 @@
 <div class="row">
+  <%= button_to "Download all images in this design", {action: "export_images", id: @design.id, method: :post } , class: "btn btn-danger" %>
 <%= render 'side_bar_tree' %>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <%= button_to "Export all images in this design", action: "export_images", id: @design.id %>
+  
 </div>
