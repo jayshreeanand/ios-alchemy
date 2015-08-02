@@ -35,7 +35,12 @@ body {
 }
 body {
   color: #707070;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 100;
   text-align: center;
+}
+.lead {
+  font-size: 25px;
 }
 
 .upload-button {
@@ -75,6 +80,8 @@ body {
 
 .cover .btn-lg {
   padding: 10px 20px;
+  width: 500px;
+
 }
 
 /*
