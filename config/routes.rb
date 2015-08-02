@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   root 'pages#landing'
-  get 'home' => 'home#index'
+  get 'home' => 'uploads#home'
   get 'designs' => 'designs#index'
 
   resources :uploads do

@@ -64,3 +64,18 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+
+/* Uploads */
+
+.upload-box {
+  margin-bottom: 30px;
+
+  .thumbnail {
+    background-color: #FEFEFE;
+    height: 450px;
+    display: block;
+    min-height: 450px;
+  }
+}

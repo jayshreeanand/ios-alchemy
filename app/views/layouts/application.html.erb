@@ -40,17 +40,24 @@
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row text-center">
-          <div class="container-fluid">
-            <% if notice %>
-              <p class="alert alert-success"><%= notice %></p>
-            <% end %>
-            <% if alert %>
-              <p class="alert alert-danger"><%= alert %></p>
-            <% end %>
+      <div class="row text-center">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+              <ul class="nav nav-sidebar">
+                <li><a href="<%= home_path %>">Upload PSD</a></li>
+                <li><a href="<%= uploads_path %>">My Uploads</a></li>
+                <li><a href="#">Exported Images</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+              <div class="main-container row">
+                <%= yield %>
+              </div>
+            </div>
+          </div>
         </div>
-          <%= yield %>
-        </div>
+      </div>
     </div>
     <!-- /.container -->
 

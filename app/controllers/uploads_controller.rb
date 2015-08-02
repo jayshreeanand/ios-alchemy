@@ -1,12 +1,18 @@
 class UploadsController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @uploads = current_user.uploads
+  end
+  def home
+    @uploads= current_user.uploads
+  end
   
   def new
     @upload = Upload.new
   end
 
   def create
-    byebug
     @upload = current_user.uploads.new psd: URI.parse(URI.unescape(params['url']))
     respond_to do |format|
       if @upload.save
