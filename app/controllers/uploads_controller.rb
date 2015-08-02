@@ -17,7 +17,7 @@ class UploadsController < ApplicationController
     respond_to do |format|
       if @upload.save
         Resque.enqueue PsdJob, @upload.id
-        format.html { redirect_to @upload, notice: 'PSD was successfully uploaded.' }
+        format.html { redirect_to :home, notice: 'PSD was successfully uploaded.' }
         format.json { render :show, status: :created, location: @upload }
       else
         format.html { render :new }

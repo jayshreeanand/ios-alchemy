@@ -4,7 +4,7 @@ class PsdJob
   @queue = :worker
 
   def self.perform(upload_id)
-    PsdUtils::Resize.run upload_id
+    PsdUtils::Parse.run upload_id
     # download and parse the file
   end
 end

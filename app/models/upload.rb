@@ -8,10 +8,10 @@ has_attached_file :psd_image,
                   :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
                   
 validates_attachment_file_name :psd, :matches => [/psd\Z/]
-validates_attachment_file_name :psd_image, :matches => [/psd_image\Z/]
+validates_attachment_file_name :psd_image, :matches => [/png\Z/]
 
 belongs_to :user
-has_many :designs
+has_many :designs, dependent: :destroy
 
 def s3_credentials
   { 

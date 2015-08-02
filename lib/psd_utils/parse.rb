@@ -2,11 +2,18 @@ module PsdUtils
   class Parse
     def self.run upload_id
       upload = Upload.find upload_id
-      # upload.psd.copy_to_local_file(:original, Rails.root.join('tmp',"#{upload_id}.psd"))
+      upload.psd.copy_to_local_file(:original, Rails.root.join('tmp',"#{upload_id}.psd"))
       psd = PSD.new(Rails.root.join('tmp', "#{upload_id}.psd"))
       psd.parse!
-      traverse(psd)
+      # traverse(psd)
+      psd.image.save_as_png (Rails.root.join('tmp', "#{upload_id}_psd.png"))
+      psd_image = MiniMagick::Image.open(Rails.root.join('tmp', "#{upload_id}_psd.png"))
+      psd_image.resize "250x350"
+      psd_image.write(Rails.root.join('tmp', "#{upload_id}_psd_resized.png"))
+      resized_psd_image = File.open(Rails.root.join('tmp', "#{upload_id}_psd_resized.png"))
       meta_data = psd.tree.to_hash
+      upload.psd_image = resized_psd_image
+      upload.save!
       upload.designs.create!(meta_data: meta_data)
     end
 
