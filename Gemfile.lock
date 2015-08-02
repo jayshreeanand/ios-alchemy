@@ -172,6 +172,7 @@ GEM
       resque
       sass-rails
       twitter-bootstrap-rails
+    rubyzip (1.1.7)
     s3_direct_upload (0.1.7)
       coffee-rails (>= 3.1)
       jquery-fileupload-rails (~> 0.4.1)
@@ -248,6 +249,7 @@ DEPENDENCIES
   rails_12factor
   resque
   resque-web
+  rubyzip
   s3_direct_upload
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

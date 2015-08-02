@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :images do
     collection do
       post :list_design_images
+      post :download
     end
   end
 

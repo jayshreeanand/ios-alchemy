@@ -15,7 +15,7 @@
         upload.status = 1
         upload.psd_image = resized_psd_image
         upload.save!
-        upload.designs.create!(meta_data: meta_data)
+        Design.create(meta_data: meta_data, upload_id: upload.id)
       end
 
       def self.generate_meta_data psd

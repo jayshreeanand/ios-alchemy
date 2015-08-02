@@ -1,3 +1,9 @@
+<%= button_to "Download Images", {action: "download", design_id: @images.first.design_id, method: :post } , class: "btn btn-danger" %>
+
 <div id="uploads">
   <%= render @images %>
+
+
+
 </div>
+
