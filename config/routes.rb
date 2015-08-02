@@ -16,4 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :designs do
+    collection do
+      post :create
+    end
+  end
+
 end

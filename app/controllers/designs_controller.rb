@@ -7,19 +7,20 @@ class DesignsController < ApplicationController
   def create
   end
 
-  def index
-    design = Design.first
+  def show
+    design = Design.find(params[:id])
     @design_data = [{label: "File Name", id: design.id}]
-    children_data = []
-    design.meta_data[:children].each_with_index do |child, i|
-      data = {}
-      data[:label] = "#{child[:type]} #{child[:name]}"
-      data[:id]= i
-      children_data << data
-    end
-    @design_data[0][:children] = children_data
+    @design_data[0][:children] = design.meta_data
+    # children_data = []
+    # design.meta_data[:children].each_with_index do |child, i|
+    #   data = {}
+    #   data[:label] = "#{child[:type]} #{child[:name]}"
+    #   data[:id]= i
+    #   children_data << data
+    # end
+    # @design_data[0][:children] = children_data
   end
 
-  def show
+  def index
   end
 end

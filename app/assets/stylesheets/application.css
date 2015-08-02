@@ -79,6 +79,16 @@
     min-height: 450px;
   }
 }
+.upload-title {
+  display: block;
+  height: 50px;
+  margin-bottom: 5px;
+  color: black;
+}
+.upload-title a {
+  color : black;
+}
+
 
 .sidebar {
   background-color: #FFC266;
