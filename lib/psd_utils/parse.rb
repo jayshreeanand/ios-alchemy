@@ -13,6 +13,7 @@
         resized_psd_image = File.open(Rails.root.join('tmp', "#{upload_id}_psd_resized.png"))
         meta_data = generate_meta_data psd
         upload.psd_image = resized_psd_image
+        upload.status  = :completed
         upload.save!
         upload.designs.create!(meta_data: meta_data)
       end

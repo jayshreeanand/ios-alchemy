@@ -2,10 +2,10 @@ class UploadsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @uploads = current_user.uploads
+    @uploads = current_user.uploads.completed
   end
   def home
-    @uploads= current_user.uploads
+    @uploads= current_user.uploads.completed
   end
   
   def new

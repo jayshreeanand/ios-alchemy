@@ -10,6 +10,8 @@ has_attached_file :psd_image,
 validates_attachment_file_name :psd, :matches => [/psd\Z/]
 validates_attachment_file_name :psd_image, :matches => [/png\Z/]
 
+enum status: [:incompleted, :completed]
+
 belongs_to :user
 has_many :designs, dependent: :destroy
 
