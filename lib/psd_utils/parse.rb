@@ -11,16 +11,47 @@
         psd_image.resize "250x350"
         psd_image.write(Rails.root.join('tmp', "#{upload_id}_psd_resized.png"))
         resized_psd_image = File.open(Rails.root.join('tmp', "#{upload_id}_psd_resized.png"))
-        meta_data = generate_meta_data psd
+        meta_data = generate_meta_data upload.psd_file_name, psd
         upload.status = 1
         upload.psd_image = resized_psd_image
         upload.save!
         Design.create(meta_data: meta_data, upload_id: upload.id)
       end
 
-      def self.generate_meta_data psd
-        parent = {}
-        meta_data = []
+      def self.generate_tree_data(node) 
+        children_tree_at_node = []
+        
+        if node.has_children?
+          node.children.each do |child_node|
+            child_node_data = {
+              name: child_node.name,
+              id: child_node.layer_id.id
+            }
+            
+            if child_node.group?  
+              child_node_data[:children] = self.generate_tree_data(child_node)
+              children_tree_at_node.push(child_node_data)
+            elsif child_node.layer?
+              children_tree_at_node.push(child_node_data)
+            end
+          end
+        end
+
+        return children_tree_at_node
+      end
+
+      def self.generate_meta_data file_name, psd
+        
+        psd_tree_data = self.generate_tree_data(psd.tree.root)
+        return [
+          label: file_name,
+          id: 0,
+          children: psd_tree_data
+        ]
+      end
+
+
+=begin
         psd.layers.each_with_index do |layer, id|
 
           next if layer.hidden?
@@ -42,7 +73,7 @@
           end
         end
         result = [{label: "File Name", id: 0, children: meta_data}]
-      end
+=end
 
       def self.traverse psd
         if psd.resources[:layer_comps]
