@@ -10,12 +10,23 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require s3_direct_upload_progress_bars
  *= require jqtree
+ *= require bootstrap_and_overrides
+ *= require home
  *= require_self
  */
 
+.body {
+  background-color: #F8F8F8;
+
+}
+#file{ width:0; height:0; } 
+
+.file-upload-button {
+  background-color: red;
+  padding: 10 60px;
+}
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -89,10 +100,25 @@
   color : black;
 }
 
+.nav-sidebar {
+  margin-top: 60px;
 
-.sidebar {
-  background-color: #FFC266;
+
 }
+.nav-sidebar > li {
+  margin-top: 30px;
+
+}
+
+.nav-sidebar > li > a {
+  color: #707070;
+
+}
+.sidebar {
+  background-color: white;
+}
+
+
 
 
 .image-thumbnail {
@@ -110,3 +136,64 @@
   vertical-align: bottom;
 }
 
+.navbar-default {
+  min-height: 100px;
+  background-color: white;
+  border-bottom: 2px solid #BABAB8;
+  color: #000;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #707070;
+
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  color: #707070;
+}
+
+.container{
+  margin-top: 60px;
+}
+.discount-tip {
+  color: #3366FF;
+}
+.old-price {
+  color: #FF6666;
+  font-size: 12px;
+}
+.navbar-header {
+  margin-top: 0px;
+  padding-left: 50px;
+}
+
+.navbar-nav {
+  padding-top: 40px;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #fff;
+  background-color: red;
+  border: 1px solid #fff;
+}
+
+ .btn-lg {
+  padding: 10px 90px;
+
+}
+
+.psd-img {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.main-container {
+  min-height: 400px;
+}
+
+.file-upload-text {
+  font-size: 20px;
+  color: #BABAB8;
+}

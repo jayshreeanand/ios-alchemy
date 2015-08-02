@@ -1,5 +1,12 @@
+<div class ="row">
+  <img class="psd-img" src="psd.jpg"/>
+</div>
+<p class="file-upload-text">Choose and upload PSD</p>
 <%= s3_uploader_form callback_url: uploads_url, callback_param: "upload[psd_url]", id: "s3-uploader" do %>
-<%= file_field_tag :file, multiple: true , class: "btn btn-lg"%>
+<%= file_field_tag :file, multiple: true%>
+<input type='file' id='file' name='file' multiple: "true" />
+<a href="#" class = "btn btn-lg btn-danger file-upload-button" id='link-upload'>Upload</a>
+
 <% end %>
 <div id="uploads_container"></div>
   <script id="template-upload" type="text/x-tmpl">
@@ -8,4 +15,15 @@
   <div class="progress progress-striped active"><div class="bar" style="width: 0%"></div></div>
   </div>
   </script>
+
+  <script type="text/javascript">
+  $(function(){
+    $('#link-upload').click(function(e){
+      e.preventDefault();
+      $('#file').click();
+    });
+  });
+</script>
 </div>
+
+
