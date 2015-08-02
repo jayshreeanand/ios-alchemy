@@ -13,7 +13,7 @@ validates_attachment_file_name :psd_image, :matches => [/png\Z/]
 enum status: [:incompleted, :completed]
 
 belongs_to :user
-has_many :designs, dependent: :destroy
+has_one :design, dependent: :destroy
 def s3_credentials
   { 
     bucket: ENV['S3_BUCKET'], 

@@ -3,7 +3,12 @@ class ImagesController < ApplicationController
 
   def index
     # @designs = current_user.designs.completed
-    @designs = Design.all.completed
+    @designs = []
+    uploads = current_user.uploads
+    uploads.each do |upload|
+      @designs << upload.design if upload.design.completed?
+    end
+    @designs
   end
 
   def show

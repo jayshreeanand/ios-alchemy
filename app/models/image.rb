@@ -1,5 +1,6 @@
 class Image < ActiveRecord::Base
   belongs_to :designs, dependent: :destroy
+  
   has_attached_file :onex, 
                   :storage => :s3,
                   :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
