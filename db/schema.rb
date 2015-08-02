@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801092237) do
+ActiveRecord::Schema.define(version: 20150802070720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(version: 20150801092237) do
     t.string   "psd_content_type"
     t.integer  "psd_file_size"
     t.datetime "psd_updated_at"
+    t.string   "psd_image_file_name"
+    t.string   "psd_image_content_type"
+    t.integer  "psd_image_file_size"
+    t.datetime "psd_image_updated_at"
   end
 
   add_index "uploads", ["user_id"], name: "index_uploads_on_user_id", using: :btree
