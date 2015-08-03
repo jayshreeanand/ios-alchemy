@@ -54,10 +54,10 @@ module IosUtils
       
 
         result = generate_template data
-        ios_screen = IosScreen.first_or_create(design_id: design.id)
+        ios_screen = IosScreen.where(design_id: design.id).first_or_create
         ios_screen.formatted_data = result
         ios_screen.save!
-        
+
         # IosScreen.create!(design_id: design.id, formatted_data: result)
 
     end
