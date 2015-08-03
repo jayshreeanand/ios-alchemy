@@ -8,6 +8,7 @@ module IosUtils::Components
       result = ''
 
       for data.each do |constraint|
+        #TODO
       end
     end
   end

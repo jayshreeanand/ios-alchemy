@@ -1,12 +1,13 @@
 module IosUtils::Components
   class Button
     def self.generate data
-      template data[:button]
+      template data
     end
 
     def self.template data
       type = "push" # regular button
       style = "rounded"
+      data[:text] = data[:text] || "Button Name Here"
       if data[:type] = "rounded"
         type = "roundRect"
         style = "roundedRect"

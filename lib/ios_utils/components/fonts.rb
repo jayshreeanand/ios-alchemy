@@ -1,7 +1,7 @@
 module IosUtils::Components
   class Fonts
     def self.generate data
-      template data[:fonts]
+      template data
     end
 
     def self.template fonts
