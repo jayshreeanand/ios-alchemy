@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  belongs_to :designs, dependent: :destroy
+  belongs_to :design
   
   has_attached_file :onex, 
                   :storage => :s3,

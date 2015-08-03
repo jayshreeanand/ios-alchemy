@@ -31,5 +31,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :ios_screens do
+    collection do
+      post :export
+      post :download
+    end
+  end
 
 end
