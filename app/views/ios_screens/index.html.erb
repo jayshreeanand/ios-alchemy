@@ -1,0 +1,9 @@
+<% @designs.each do |design| %>
+  <h6 class="upload-title"></h6>
+    <div class=" col-md-3 col-md-offset-1 caption">
+    <%= button_to "Download screen for #{design.upload.psd_file_name}", {action: "download", design_id: design.id, method: :post } , class: "btn btn-danger" %>
+     </div>
+<% end %>
+
+
+    
