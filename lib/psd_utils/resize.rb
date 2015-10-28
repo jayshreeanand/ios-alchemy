@@ -16,9 +16,9 @@ module PsdUtils
         resize_2x
         resize_3x
 
-        image_1x = File.open("#{@file_path}@1x.png")
-        image_2x = File.open("#{@file_path}@2x.png")
-        image_3x = File.open("#{@file_path}@3x.png")
+        image_1x = File.open("#{@file_path}_1x.png")
+        image_2x = File.open("#{@file_path}_2x.png")
+        image_3x = File.open("#{@file_path}_3x.png")
 
 
         Image.create(design_id: design.id, onex: image_1x, twox: image_2x, threex: image_3x)
