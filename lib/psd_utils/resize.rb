@@ -11,10 +11,11 @@ module PsdUtils
         path = layer.path.split('/')[0...-1].join('/')
         FileUtils.mkdir_p("output/#{path.delete(' ')}")
         @file_path = "output/#{layer.path.delete(' ')}"
-        image = layer.image.save_as_png "#{@file_path}.png"
-        resize_1x
-        resize_2x
+        image = layer.image.save_as_png "#{@file_path}_orig.png"
+
         resize_3x
+        resize_2x
+        resize_1x
 
         image_1x = File.open("#{@file_path}.png")
         image_2x = File.open("#{@file_path}@2x.png")
@@ -29,19 +30,19 @@ module PsdUtils
     end
 
     def self.resize_1x
-      image = MiniMagick::Image.open "#{@file_path}.png"
+      image = MiniMagick::Image.open "#{@file_path}_orig.png"
       image.resize "#{image.width/3}x#{image.height/3}"
       image.write "#{@file_path}.png"
     end
 
     def self.resize_2x
-      image = MiniMagick::Image.open "#{@file_path}.png"
+      image = MiniMagick::Image.open "#{@file_path}_orig.png"
       image.resize "#{(image.width*2)/3}x#{(image.height*2)/3}"
       image.write "#{@file_path}@2x.png"
     end
 
     def self.resize_3x
-      image = MiniMagick::Image.open "#{@file_path}.png"
+      image = MiniMagick::Image.open "#{@file_path}_orig.png"
       image.write "#{@file_path}@3x.png"
     end
   end
