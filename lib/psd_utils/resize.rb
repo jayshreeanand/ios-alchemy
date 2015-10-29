@@ -31,12 +31,12 @@ module PsdUtils
     def self.resize_1x
       image = MiniMagick::Image.open "#{@file_path}.png"
       image.resize "#{image.width/3}x#{image.height/3}"
-      image.write "#{@file_path}_1x.png"
+      image.write "#{@file_path}.png"
     end
 
     def self.resize_2x
       image = MiniMagick::Image.open "#{@file_path}.png"
-      image.resize "#{image.width/2}x#{image.height/2}"
+      image.resize "#{(image.width*2)/3}x#{(image.height*2)/3}"
       image.write "#{@file_path}_2x.png"
     end
 
